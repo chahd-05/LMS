@@ -1,0 +1,31 @@
+{
+  "name": "lms",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000L\u0000M\u0000S\u0000\r\u0000 \u0000",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chahd-05/LMS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/chahd-05/LMS/issues"
+  },
+  "homepage": "https://github.com/chahd-05/LMS#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
