@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const moduleSchema = new mongoose.Schema(
     {
         title: {
-            type: string,
+            type: String,
             require: true,
             trim: true
         }
@@ -11,7 +11,7 @@ const moduleSchema = new mongoose.Schema(
 
     {
         description: {
-            type: string,
+            type: String,
             require: true,
             trim: true
         }
@@ -19,7 +19,7 @@ const moduleSchema = new mongoose.Schema(
 
     {
         order: {
-            type: number,
+            type: Number,
             require: true,
             min: 1
         }
