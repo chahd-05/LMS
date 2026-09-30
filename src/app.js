@@ -1,6 +1,7 @@
 require("dotenv").config()
 
 const notFound = require("./middlewares/notFound")
+const errorHandler = require("./middlewares/errorHandler")
 
 const express = require("express")
 
@@ -15,6 +16,7 @@ connectDB()
 const PORT = process.env.PORT || 3000
 
 app.use(notFound)
+app.use(errorHandler)
 
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`)
