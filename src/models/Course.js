@@ -39,7 +39,7 @@ const courseSchema = new mongoose.Schema(
     },
 
     publishedAt: {
-        type: date,
+        type: Date,
         default: null
     },
     },
