@@ -1,5 +1,7 @@
 require("dotenv").config()
 
+const courseRoute = require("./routes/courseRoutes")
+
 const notFound = require("./middlewares/notFound")
 const errorHandler = require("./middlewares/errorHandler")
 
@@ -15,11 +17,12 @@ connectDB()
 
 const PORT = process.env.PORT || 3000
 
+app.use("/api/courses", courseRoute)
 app.use(notFound)
 app.use(errorHandler)
 
 app.listen(PORT, () => {
-    console.log(`server running on port ${PORT}`)
+    console.log(`server running on port: http://localhost:${PORT}`)
 })
 
 module.exports = app
