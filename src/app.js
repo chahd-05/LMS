@@ -1,6 +1,7 @@
 require("dotenv").config()
 
 const courseRoute = require("./routes/courseRoutes")
+const moduleRoute = require("./routes/moduleRoutes")
 
 const notFound = require("./middlewares/notFound")
 const errorHandler = require("./middlewares/errorHandler")
@@ -18,6 +19,8 @@ connectDB()
 const PORT = process.env.PORT || 3000
 
 app.use("/api/courses", courseRoute)
+app.use("/api/courses", moduleRoute)
+
 app.use(notFound)
 app.use(errorHandler)
 
