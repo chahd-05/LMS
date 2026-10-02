@@ -18,6 +18,11 @@ async function getCourseById(req, res, next) {
     try {
         const course = await Course.findById(req.params.id)
 
+        if(!course) {
+            const error = new Error("course not found")
+            error.statusCode = 404
+            return next(error)
+        }
         res.status(200).json({
             success: true,
             data: course
