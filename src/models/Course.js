@@ -1,40 +1,34 @@
-const mongoose = require("mongoose")
+const mongoose = required("mongoose")
 
 const courseSchema = new mongoose.Schema(
     {
         title: {
     type: String,
-    require: true,
+    required: true,
     trim: true
     },
 
     description: {
         type: String,
-        require: true,
+        required: true,
         trim: true
     },
 
     category: {
         type: String,
-        require: true,
+        required: true,
         trim: true
     },
 
     level: {
         type: String,
-        require: true,
-        trim: true
-    },
-
-    status: {
-        type: String,
-        require: true,
+        required: true,
         enum: ["beginner", "intermediate", "advanced"]
     },
 
     status: {
         type: String,
-        require: true,
+        required: true,
         enum: ["draft", "published"]
     },
 
