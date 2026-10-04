@@ -21,14 +21,14 @@ const resourceSchema = new mongoose.Schema(
         },
 
         module: {
-            type: String,
-            ref: mongoose.Schema.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Module",
             required: true
         }
     },
 
      {
-        timeseries: true
+        timestamps: true
     }
 )
 

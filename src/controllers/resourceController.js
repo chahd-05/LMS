@@ -6,7 +6,7 @@ async function getResourcesByModule(req, res, next) {
             module: req.params.moduleId
         })
 
-        req.status(200).json({
+        res.status(200).json({
             success: true,
             data: resources
         })
