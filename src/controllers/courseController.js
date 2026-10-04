@@ -14,6 +14,12 @@ async function getPublishedCourse(req, res, next) {
             filter.level = req.query.level
         }
 
+        if(req.query.keyword) {
+            filter.title = {
+                $regex: new RegExp(req.query.keyword, "i")
+            }
+        }
+
         const courses = await Course.find(filter);
 
         res.status(200).json({
