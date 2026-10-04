@@ -10,6 +10,10 @@ async function getPublishedCourse(req, res, next) {
             filter.category = req.query.category;
         }
 
+        if(req.query.level) {
+            filter.level = req.query.level
+        }
+
         const courses = await Course.find(filter);
 
         res.status(200).json({
