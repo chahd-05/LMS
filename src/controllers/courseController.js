@@ -74,8 +74,32 @@ async function createCourse(req, res, next) {
     }
 }
 
+async function updateCourse(req, res, next) {
+    try {
+        const course = await Course.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true, runValidators: true }
+        );
+
+        if (!course) {
+            const error = new Error("course not found");
+            error.statusCode = 404;
+            return next(error);
+        }
+
+        res.status(200).json({
+            success: true,
+            data: course
+        });
+    } catch(error) {
+        next(error);
+    }
+}
+
 module.exports = {
     getPublishedCourse,
     getCourseById,
-    createCourse
+    createCourse,
+    updateCourse
 };
