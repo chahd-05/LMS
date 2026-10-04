@@ -26,6 +26,10 @@ async function getPublishedCourse(req, res, next) {
             sort.createdAt = 1
         }
 
+        if(req.query.sort === "publishedAt") {
+            sort.createdAt = 1
+        }
+
         const courses = await Course.find(filter).sort(sort)
 
         res.status(200).json({
