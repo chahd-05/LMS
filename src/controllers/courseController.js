@@ -22,6 +22,7 @@ async function getPublishedCourse(req, res, next) {
 
         let sort = {}
 
+        const order = req.query.order === "desc" ? -1 : 1
         if(req.query.sort === "createdAt") {
             sort.createdAt = 1
         }
