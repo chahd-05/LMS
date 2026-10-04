@@ -61,7 +61,21 @@ async function getCourseById(req, res, next) {
     }
 }
 
+async function createCourse(req, res, next) {
+    try {
+        const course = await Course.create(req.body)
+
+        res.status(201).json({
+            success: true,
+            data: course
+        })
+    } catch(error) {
+        next(error)
+    }
+}
+
 module.exports = {
     getPublishedCourse,
-    getCourseById
+    getCourseById,
+    createCourse
 };
