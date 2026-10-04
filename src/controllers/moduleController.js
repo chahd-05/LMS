@@ -4,7 +4,7 @@ async function getModulesByCourse(req, res, next) {
 
         const modules = await Module.find({
             course: req.params.courseId
-        })
+        }).sort({ order: 1 })
 
         res.status(200).json({
             success: true,
