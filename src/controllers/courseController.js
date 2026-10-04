@@ -97,9 +97,29 @@ async function updateCourse(req, res, next) {
     }
 }
 
+async function deleteCourse(req, res, next) {
+    try {
+        const course = await Course.findByIdAndDelete(req.params.id);
+
+        if (!course) {
+            const error = new Error("course not found");
+            error.statusCode = 404;
+            return next(error);
+        }
+
+        res.status(200).json({
+            success: true,
+            message: "course deleted successfully"
+        });
+    } catch(error) {
+        next(error);
+    }
+}
+
 module.exports = {
     getPublishedCourse,
     getCourseById,
     createCourse,
-    updateCourse
+    updateCourse,
+    deleteCourse
 };
