@@ -2,6 +2,7 @@ require("dotenv").config()
 
 const courseRoute = require("./routes/courseRoutes")
 const moduleRoute = require("./routes/moduleRoutes")
+const resourceRoute = require("./routes/resourceRoutes")
 
 const notFound = require("./middlewares/notFound")
 const errorHandler = require("./middlewares/errorHandler")
@@ -20,6 +21,7 @@ const PORT = process.env.PORT || 3000
 
 app.use("/api/courses", courseRoute)
 app.use("/api/courses", moduleRoute)
+app.use("/api/modules", resourceRoute)
 
 app.use(notFound)
 app.use(errorHandler)
