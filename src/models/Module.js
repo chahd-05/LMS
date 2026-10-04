@@ -4,33 +4,34 @@ const moduleSchema = new mongoose.Schema(
     {
         title: {
             type: String,
-            require: true,
+            required: true,
             trim: true
-        }
-    },
+        },
+    
 
-    {
+
         description: {
             type: String,
-            require: true,
+            required: true,
             trim: true
-        }
-    },
+        },
+    
 
-    {
+
         order: {
             type: Number,
-            require: true,
+            required: true,
             min: 1
-        }
-    },
+        },
+    
 
-    {
+
         course: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Course",
             required: true
         }
+    
     },
 
     {
