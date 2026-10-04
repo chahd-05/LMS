@@ -23,7 +23,6 @@ async function getPublishedCourse(req, res, next) {
 
 async function getCourseById(req, res, next) {
     try {
-        // console.log("category:", req.query.category)
         const course = await Course.findById(req.params.id);
 
         if(!course) {
